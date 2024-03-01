@@ -95,7 +95,7 @@
             List<Book> loadedBooks = LoadBooks();
             if (loadedBooks != null)
             {
-                Console.WriteLine("These are your books: ");
+                Console.WriteLine("These are your books: \n");
                 foreach (var item in loadedBooks)
                 {
                     Console.WriteLine($"{item.Name} by {item.Author} written in {item.Date}");
@@ -127,7 +127,7 @@
                 Book foundBook = loadedBooks.Find(book => book.Name == name);
                 if (foundBook != null)
                 {
-                    Console.WriteLine($"Book '{name}' found.");
+                    Console.WriteLine($"Book found: {foundBook.Name} written by {foundBook.Author} in year {foundBook.Date}");
                 }
                 else
                 {
