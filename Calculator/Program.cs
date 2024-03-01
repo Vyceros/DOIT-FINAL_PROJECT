@@ -55,13 +55,14 @@
 
             public double Divide(params double[] numbers)
             {
-                double result = 0;
+                double result = numbers[0];
                 for (int i = 0; i < numbers.Length - 1; i++)
                 {
-                    for (int j = 0; j < numbers.Length; j++)
+                    if (numbers[i] == 0)
                     {
-                        result = numbers[i] / numbers[j];
+                        throw new DivideByZeroException("Can't divide by zero.");
                     }
+                    result /= numbers[i];
                 }
                 return result;
             }
