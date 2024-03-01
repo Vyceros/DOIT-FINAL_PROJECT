@@ -8,6 +8,7 @@
             Random random = new Random();
             string wordToGuess = words[random.Next(0, words.Length)];
             char[] guessedWord = new char[wordToGuess.Length];
+
             for (int i = 0; i < wordToGuess.Length; i++)
             {
                 guessedWord[i] = '_';
@@ -63,36 +64,6 @@
             Console.ReadLine();
         }
 
-
-
-
-        public static bool isWordComplete(string randomWord, string[] hiddenWord)
-        {
-            string newHiddenWord = string.Empty;
-
-            foreach (var item in hiddenWord)
-            {
-                newHiddenWord += item;
-            }
-
-            if (randomWord != newHiddenWord)
-            {
-                return false;
-            }
-
-            return true;
-
-        }
-
-        public static void printOutWord(string[] word)
-        {
-            string newWord = string.Empty;
-            foreach (var item in word)
-            {
-                newWord += item;
-            }
-            Console.Write(newWord);
-        }
 
     }
 }

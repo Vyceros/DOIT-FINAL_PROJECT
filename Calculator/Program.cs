@@ -5,11 +5,11 @@
         static void Main(string[] args)
         {
 
-            Calculator calc = new Calculator();
-            Console.WriteLine(calc.Multiply(5, 5, 5, 5));
-            Console.WriteLine(calc.Add(4,5,6,7,8,9,0,10,14,15,16));
-            Console.WriteLine(calc.Divide(5,2));
-            Console.WriteLine(calc.Substract(10 - 3 - 2 - 7));
+            Calculator calculator = new Calculator();
+
+            
+
+
         }
 
         class Calculator
@@ -18,9 +18,9 @@
             {
 
             }
-            public int Add(params int[] numbers)
+            public double Add(params double[] numbers)
             {
-                int result = 0;
+                double result = 0;
                 foreach (int i in numbers)
                 {
                     result += i;
@@ -28,14 +28,14 @@
                 return result;
             }
 
-            public int Substract(params int[] numbers)
+            public double Substract(params double[] numbers)
             {
                 if (numbers == null || numbers.Length == 0)
                 {
                     throw new ArgumentException("There's nothing to substract");
                 }
 
-                int result = numbers[0]; 
+                double result = numbers[0]; 
                 for (int i = 1; i < numbers.Length; i++)
                 {
                     result -= numbers[i]; 
@@ -43,7 +43,7 @@
                 return result;
             }
 
-            public int Multiply(params int[] numbers)
+            public double Multiply(params double[] numbers)
             {
                 int result = 1;
                 foreach (int i in numbers)
@@ -56,7 +56,7 @@
             public double Divide(params double[] numbers)
             {
                 double result = numbers[0];
-                for (int i = 0; i < numbers.Length - 1; i++)
+                for (int i = 1; i < numbers.Length; i++)
                 {
                     if (numbers[i] == 0)
                     {
